@@ -2,3 +2,8 @@
 
 export(ggbiplot)
 export(ggscreeplot)
+import(ggplot2)
+import(grid)
+import(plyr)
+import(scales)
+import(stats)

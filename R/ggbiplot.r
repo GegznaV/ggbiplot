@@ -33,6 +33,7 @@
 #' @param labels.size     size of the text used for the labels
 #' @param alpha           alpha transparency value for the points (0 = transparent, 1 = opaque)
 #' @param circle          draw a correlation circle? (only applies when prcomp was called with scale = TRUE and when var.scale = 1)
+#' @param circle.prob     size of the circle
 #' @param var.axes        draw arrows for the variables?
 #' @param varname.size    size of the text for variable names
 #' @param varname.adjust  adjustment factor the placement of the variable names, >= 1 means farther from the arrow
@@ -41,6 +42,7 @@
 #' @param varname.labels.expr should varname.labels be interpreted as expressions to be parsed?
 #'
 #' @return                a ggplot2 plot
+#' @import ggplot2 plyr scales grid stats
 #' @export
 #' @examples
 #'   data(wine)
@@ -54,7 +56,8 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
                      var.axes = TRUE, 
                      circle = FALSE, circle.prob = 0.69, 
                      varname.size = 3, varname.adjust = 1.5, 
-                     varname.abbrev = FALSE, varname.labels = NULL, varname.labels.expr = F, ...)
+                     varname.abbrev = FALSE, varname.labels = NULL,
+                     varname.labels.expr = FALSE, ...)
 {
   library(ggplot2)
   library(plyr)

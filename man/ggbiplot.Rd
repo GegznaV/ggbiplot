@@ -8,7 +8,8 @@ ggbiplot(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
   obs.scale = 1 - scale, var.scale = scale, groups = NULL,
   ellipse = FALSE, ellipse.prob = 0.68, labels = NULL, labels.size = 3,
   alpha = 1, var.axes = TRUE, circle = FALSE, circle.prob = 0.69,
-  varname.size = 3, varname.adjust = 1.5, varname.abbrev = FALSE)
+  varname.size = 3, varname.adjust = 1.5, varname.abbrev = FALSE,
+  varname.labels = NULL, varname.labels.expr = FALSE, ...)
 }
 \arguments{
 \item{pcobj}{an object returned by prcomp() or princomp()}
@@ -46,6 +47,10 @@ ggbiplot(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
 \item{varname.adjust}{adjustment factor the placement of the variable names, >= 1 means farther from the arrow}
 
 \item{varname.abbrev}{whether or not to abbreviate the variable names}
+
+\item{varname.labels}{vector of labels to use instead of prcomp rownames}
+
+\item{varname.labels.expr}{should varname.labels be interpreted as expressions to be parsed?}
 }
 \value{
 a ggplot2 plot
@@ -56,7 +61,6 @@ Biplot for Principal Components using ggplot2
 \examples{
   data(wine)
   wine.pca <- prcomp(wine, scale. = TRUE)
-  print(ggbiplot(wine.pca, obs.scale = 1, var.scale = 1, groups = wine.class,
-  ellipse = TRUE, circle = TRUE))
+  print(ggbiplot(wine.pca, obs.scale = 1, var.scale = 1, groups = wine.class, ellipse = TRUE, circle = TRUE))
 
 }

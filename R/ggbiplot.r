@@ -59,11 +59,7 @@ ggbiplot <- function(pcobj, choices = 1:2, scale = 1, pc.biplot = TRUE,
                      varname.abbrev = FALSE, varname.labels = NULL,
                      varname.labels.expr = FALSE, ...)
 {
-  library(ggplot2)
-  library(plyr)
-  library(scales)
-  library(grid)
-  
+
   stopifnot(length(choices) == 2)
   
   # Recover the SVD

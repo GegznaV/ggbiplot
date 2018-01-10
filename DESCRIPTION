@@ -1,4 +1,4 @@
-Package: ggbiplot
+Package: ggbiplot2
 Type: Package
 Title: A ggplot2 based biplot
 Version: 0.55

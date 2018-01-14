@@ -19,3 +19,4 @@ Enhances:
     FactoMineR, MASS
 License: GPL-2
 URL: http://github.com/vqv/ggbiplot
+RoxygenNote: 6.0.1
